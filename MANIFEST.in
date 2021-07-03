@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include mendybraun_changes *.css
+recursive-include mendybraun_changes *.csv
+recursive-include mendybraun_changes *.html
+recursive-include mendybraun_changes *.ico
+recursive-include mendybraun_changes *.js
+recursive-include mendybraun_changes *.json
+recursive-include mendybraun_changes *.md
+recursive-include mendybraun_changes *.png
+recursive-include mendybraun_changes *.py
+recursive-include mendybraun_changes *.svg
+recursive-include mendybraun_changes *.txt
+recursive-exclude mendybraun_changes *.pyc
