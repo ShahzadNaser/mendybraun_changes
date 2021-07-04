@@ -94,6 +94,9 @@ doctype_js = {
 doc_events = {
 	"Item": {
 		"after_insert": "mendybraun_changes.custom.item.after_insert"
+	},
+	"BOM": {
+		"validate": "mendybraun_changes.custom.bom.validate"
 	}
 }
 
