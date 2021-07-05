@@ -1,8 +1,8 @@
 frappe.ui.form.on("BOM", {
 	validate: function(frm){
-		$.each(frm.doc.items || [], function(i,v){
+		/*$.each(frm.doc.items || [], function(i,v){
 			calculate_item_percentage_with_waste(frm, v.doctype, v.name);
-		});
+		});*/
 	}
 });
 frappe.ui.form.on("BOM Item", {
@@ -72,5 +72,5 @@ var calculate_item_percentage_with_waste = function(frm, cdt, cdn){
 	var with_waste = percentage * waste;
 	frappe.model.set_value(cdt, cdn, "percentage", percentage);
 	frappe.model.set_value(cdt, cdn, "with_waste", with_waste);
-	frappe.model.set_value(cdt, cdn, "rate", with_waste);
+	frappe.model.set_value(cdt, cdn, "qty", with_waste);
 }
