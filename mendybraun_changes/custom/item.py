@@ -22,10 +22,10 @@ def after_insert(self, method):
 	else:
 		brc = self.barcodes[0].barcode
 	barcode.base.Barcode.default_writer_options['write_text'] = False
-	UPC = barcode.get_barcode_class('upca')
-	upca = UPC(brc, writer=ImageWriter())
+	EAN = barcode.get_barcode_class('ean13')
+	ean = EAN(brc, writer=ImageWriter())
 	filename = frappe.utils.get_files_path() + '/' + brc + ''
-	name = generate('UPCA', brc, output=filename)
+	name = generate('EAN13', brc, output=filename)
 	return 'files/'+brc+'.svg'
 
 
@@ -58,7 +58,7 @@ def get_item_barcode(item_code):
 	filename = frappe.utils.get_files_path() + '/' + brc + '.svg'
 	if not os.path.isfile(filename):
 		barcode.base.Barcode.default_writer_options['write_text'] = False
-		generate('UPCA', brc, output=frappe.utils.get_files_path() + '/' + brc)
+		generate('EAN13', brc, output=frappe.utils.get_files_path() + '/' + brc)
 
 	return '/files/'+brc+'.svg'
 
