@@ -14,7 +14,7 @@ app_license = "MIT"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/mendybraun_changes/css/mendybraun_changes.css"
-# app_include_js = "/assets/mendybraun_changes/js/mendybraun_changes.js"
+app_include_js = "/assets/js/kanban_view_custom.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/mendybraun_changes/css/mendybraun_changes.css"
@@ -32,7 +32,9 @@ app_license = "MIT"
 
 # include js in doctype views
 doctype_js = { 
-	"BOM" : "public/js/bom_custom.js"
+	"BOM" : "public/js/bom_custom.js",
+	"Kanban Board" : "public/js/kanban_board_custom.js",
+	"Task": "public/js/task_custom.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -97,6 +99,9 @@ doc_events = {
 	},
 	"BOM": {
 		"validate": "mendybraun_changes.custom.bom.validate"
+	},
+	"Sales Order": {
+		"on_submit": "mendybraun_changes.custom.sales_order_custom.send_order_confirmation"
 	}
 }
 

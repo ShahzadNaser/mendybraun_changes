@@ -1,0 +1,6 @@
+<p>Dear {{ doc.customer }},</p>
+<p>Sales Order of amount <b>{{ doc.get_formatted("rounded_total") }}</b> has been created.</p>
+<p>Please Accept or Reject.</p>
+<p class="text-center" >
+    <a href="{{ site_url }}/confirmation/sales-order/{{ doc.name }}" class="btn btn-primary">Click to Review</button>
+</p>

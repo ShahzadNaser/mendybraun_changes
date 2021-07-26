@@ -1,0 +1,8 @@
+{
+	"js/kanban_view_custom.js": [
+		"public/js/views/kanban/kanban_view.js",
+		"public/js/views/kanban/kanban_board.html",
+		"public/js/views/kanban/kanban_column.html",
+		"public/js/views/kanban/kanban_card.html"
+	] 
+}
