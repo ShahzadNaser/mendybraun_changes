@@ -4,3 +4,71 @@
 <p class="text-center" >
     <a href="{{ site_url }}/confirmation/sales-order/{{ doc.name }}" class="btn btn-primary">Click to Review</button>
 </p>
+
+<table class="table table-bordered">
+    <tr>
+        <td><b>{{ _("Date") }}</b></td>
+        <td>{{ sales_order.get_formatted("transaction_date") }}</td>
+        <td><b>{{ _("Delivery Date") }}</b></td>
+        <td>{{ sales_order.get_formatted("delivery_date") }}</td>
+    </tr>
+</table>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>{{ _("Sr") }}</th>
+            <th>{{ _("Description") }}</th>
+            <th>{{ _("Qty") }}</th>
+            <th>{{ _("Rate") }}</th>
+            <th>{{ _("Amount") }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% set sr = 1 %}
+        {% for item in sales_order.items %}
+            <tr>
+                <td>{{ sr }}</td>
+                <td>
+                    <b>{{ item.description }}</b><br>
+                    <b>{{ _("Rate of Stock UOM") }}</b>: {{ item.get_formatted("rate") }}
+                </td>
+                <td>
+                    {{ item.uom }} : {{ item.qty }}
+                </td>
+                <td>
+                    {{ item.get_formatted("rate") }}
+                </td>
+                <td>
+                    {{ item.get_formatted("amount") }}
+                </td>
+            </tr>
+            {% sr += 1 %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<table class="table table-bordered">
+    <tr>
+        <td><b>{{ _("Total QTY") }}</b></td>
+        <td>{{ sales_order.get_formatted("total_qty") }}</td>
+        <td><b>{{ _("Total") }}</b></td>
+        <td>{{ sales_order.get_formatted("total") }}</td>
+    </tr>
+    <tr>
+        <td><b>{{ _("Deposit Percentage") }}</b></td>
+        <td>{{ sales_order.get_formatted("deposit_percentage") }}</td>
+        <td><b>{{ _("Grand Total") }}</b></td>
+        <td>{{ sales_order.get_formatted("grand_total") }}</td>
+    </tr>
+    <tr>
+        <td><b>{{ _("Deposit Amount") }}</b></td>
+        <td>{{ sales_order.get_formatted("deposit_amount") }}</td>
+        <td><b>{{ _("Rounded Total") }}</b></td>
+        <td>{{ sales_order.get_formatted("rounded_total") }}</td>
+    </tr>
+     <tr>
+        <td><b>{{ _("In Words") }}</b></td>
+        <td colspan="3">{{ sales_order.in_words }}</td>
+    </tr>
+</table>

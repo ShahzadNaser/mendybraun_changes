@@ -34,7 +34,8 @@ app_include_js = "/assets/js/kanban_view_custom.js"
 doctype_js = { 
 	"BOM" : "public/js/bom_custom.js",
 	"Kanban Board" : "public/js/kanban_board_custom.js",
-	"Task": "public/js/task_custom.js"
+	"Task": "public/js/task_custom.js",
+	"Sales Order": "public/js/sales_order_custom.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -101,6 +102,7 @@ doc_events = {
 		"validate": "mendybraun_changes.custom.bom.validate"
 	},
 	"Sales Order": {
+		"validate": "mendybraun_changes.custom.sales_order_custom.validate",
 		"on_submit": "mendybraun_changes.custom.sales_order_custom.send_order_confirmation"
 	}
 }
