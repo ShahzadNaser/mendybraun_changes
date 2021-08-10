@@ -13,7 +13,7 @@
  "html": "<div class=\"barcode-box\">\n    <h4 class=\"text-center\">{{ doc.item_name }}</h4>\n    <p class=\"text-center\">Barcode# {{ doc.barcodes[0].barcode if doc.barcodes else '' }} </p>\n    <p class=\"text-center\"><img src=\"{{ get_item_barcode(doc.item_code) }}\"/></p>\n</div>",
  "idx": 0,
  "line_breaks": 0,
- "modified": "2021-08-10 15:30:51.822661",
+ "modified": "2021-08-10 16:34:06.265027",
  "modified_by": "Administrator",
  "module": "ERPNext Changes for jplakerp",
  "name": "Item Barocode",
